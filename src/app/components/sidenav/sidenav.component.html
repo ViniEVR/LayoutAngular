@@ -1,0 +1,23 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenavCollapsed' : ''">
+  <div class="logoContainer">
+    <img
+      src="/assets/Img/Logo/logoGitA.png"
+      class="logo"
+      (click)="toogleCollapse()"
+      onmouseover="this.src='/assets/Img/Logo/logoGitB.png'"
+      onmouseout="this.src='/assets/Img/Logo/logoGitA.png'"
+    />
+    <div class="logoText" *ngIf="collapsed">GITLAB REPORT</div>
+    <button class="buttonClose" *ngIf="collapsed" (click)="closeSidenav()">
+      <i class="bx bx-x"></i>
+    </button>
+  </div>
+  <ul class="sidenavNav">
+    <li class="sidenavNavItem" *ngFor="let data of navData">
+      <a href="" class="sidenavNavLink" [routerLink]="[data.routelink]">
+        <i class="sidenavLinkIcon bx bx-line-chart" [class]="data.icon"></i>
+        <span class="sidenavLinkText" *ngIf="collapsed">{{ data.label }}</span>
+      </a>
+    </li>
+  </ul>
+</div>
