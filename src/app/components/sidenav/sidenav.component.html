@@ -3,7 +3,7 @@
     <img
       src="/assets/Img/Logo/logoGitA.png"
       class="logo"
-      (click)="toogleCollapse()"
+      (click)="toggleCollapse()"
       onmouseover="this.src='/assets/Img/Logo/logoGitB.png'"
       onmouseout="this.src='/assets/Img/Logo/logoGitA.png'"
     />
@@ -13,11 +13,15 @@
     </button>
   </div>
   <ul class="sidenavNav">
-    <li class="sidenavNavItem" *ngFor="let data of navData">
-      <a href="" class="sidenavNavLink" [routerLink]="[data.routelink]">
-        <i class="sidenavLinkIcon bx bx-line-chart" [class]="data.icon"></i>
+    <li class="sidenavNavItem" *ngFor="let data of navData; let i = index">
+      <a href="" class="sidenavNavLink" [routerLink]="[data.routelink]" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">
+        <i class="sidenavLinkIcon" [class]="data.icon"></i>
         <span class="sidenavLinkText" *ngIf="collapsed">{{ data.label }}</span>
       </a>
+      <hr *ngIf="data.label == 'Usuários'" />
     </li>
   </ul>
 </div>
+
+

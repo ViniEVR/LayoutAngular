@@ -10,6 +10,7 @@ import { IssuesComponent } from './components/issues/issues.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { RelatoriosComponent } from './components/relatorios/relatorios.component';
 import { CiCdComponent } from './components/ci-cd/ci-cd.component';
+import { BodyComponent } from './components/body/body.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CiCdComponent } from './components/ci-cd/ci-cd.component';
     IssuesComponent,
     UsuariosComponent,
     RelatoriosComponent,
-    CiCdComponent
+    CiCdComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,

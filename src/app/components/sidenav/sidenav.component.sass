@@ -1,33 +1,14 @@
-$magenta: #FF0077
-$black: #403F3D
-$white: #F2F2F2
-
-/* Color Theme Swatches in Hex 
-    $Gdynia-Literary-Prize-/-branding-1-hex: #F23D4C;
-    $Gdynia-Literary-Prize-/-branding-2-hex: #BF3945;
-    $Gdynia-Literary-Prize-/-branding-3-hex: #F23D5E;
-    $Gdynia-Literary-Prize-/-branding-4-hex: #403F3D;
-    $Gdynia-Literary-Prize-/-branding-5-hex: #F2F2F2; */
-
-
-/* Color Theme Swatches in RGBA 
-    $Gdynia-Literary-Prize-/-branding-1-rgba: rgba(242,60,75, 1);
-    $Gdynia-Literary-Prize-/-branding-2-rgba: rgba(191,57,68, 1);
-    $Gdynia-Literary-Prize-/-branding-3-rgba: rgba(242,60,93, 1);
-    $Gdynia-Literary-Prize-/-branding-4-rgba: rgba(63,62,61, 1);
-    $Gdynia-Literary-Prize-/-branding-5-rgba: rgba(242,242,242, 1); */
-
-
+@use './src/assets/Sass/variables.sass' as v
 
 .sidenav
-    background-color: $black
+    background-color: v.$backgroundSidenav
     position: fixed
     z-index: 1
     top: 0
     width: 5rem
     height: 100vh
     transition: all .5s ease
-    box-shadow: 0.065rem 0 1.25rem 0 $black
+    box-shadow: 0.065rem 0 1.25rem 0 v.$backgroundSidenav
     border-radius: 0px 1.5rem 1.5rem 0px
     
 
@@ -48,7 +29,7 @@ $white: #F2F2F2
         .logoText
             margin-left: 1.5rem
             font-size: 24px
-            color: $white
+            color: v.$itensSidenav
             font-weight: bolder
             
             
@@ -60,23 +41,17 @@ $white: #F2F2F2
             background-color: transparent
             font-size: 2.5rem
             border: none
-            color: $white
+            color: v.$itensSidenav
 
             &:hover
-                color: $magenta
-
+                color: v.$magenta
 
 .sidenavCollapsed
     width: 17rem
 
-
-    .logoText
+    .logoText, .buttonClose, .sidenavLinkText
         animation: fadeIn 2s
-    .buttonClose
-        animation: fadeIn 3s
     
-
-        
     
 .sidenavNav
     list-style: none
@@ -90,21 +65,26 @@ $white: #F2F2F2
 
     .sidenavNavItem
         width: 100%
-        margin-bottom: 0.625rem
+        margin-bottom: 2rem
+
+        hr
+            color: v.$magenta !important
+            margin-top: 1rem
+
 
         .sidenavNavLink
             display: flex
             align-items: center
             height: 3rem
-            color: $white
+            color: v.$itensSidenav
             text-decoration: none
             transition: color .3s ease
             border-radius: 5px
             transition: 0.5s
             &:hover
                 
-                background-color: $white
-                color: $black
+                background-color: v.$itensSidenav
+                color: v.$backgroundSidenav
                 
 
             .sidenavLinkIcon
@@ -116,6 +96,13 @@ $white: #F2F2F2
 
             .sidenavLinkText
                 margin-left: 1.5rem
+
+.active
+    background-color: v.$itensSidenav
+    
+    .sidenavLinkIcon, .sidenavLinkText
+        color: v.$backgroundSidenav
+
                 
         
 @keyframes fadeIn
@@ -123,4 +110,6 @@ $white: #F2F2F2
         opacity: 0
     100%
         opacity: 1
+
+
         
