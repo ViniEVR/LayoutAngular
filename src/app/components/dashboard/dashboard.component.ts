@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { dashboardData } from './dashboard-data';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.sass']
 })
 export class DashboardComponent {
+
+  dashboardData = dashboardData;
 
 }
